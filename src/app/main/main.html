@@ -1,0 +1,115 @@
+<div ng-controller="PokedexController as ctrl" ng-init="ctrl.init()">
+  <div class="div-input-search-pokemon">
+    <div class="div-input-search-pokemon-secundary">
+      <md-input-container class="md-block" flex-gt-sm>
+        <label><img ng-src="assets/images/search-black-18dp.svg">Search pokemon</label>
+        <input ng-model="PokemonSearch">
+      </md-input-container>
+    </div>
+  </div>
+  <div ng-repeat="pokemon in ctrl.pokedex | filter:PokemonSearch | limitTo:20">
+    <div class="col-sm-6 col-md-3 col-md-2 text-center d-flex justify-content-center">
+      <md-card class="div-primary-pokemon" ng-click="ctrl.showAdvanced(pokemon.name)">
+        <div class="md-card-pokedex"><img ng-src="assets/images/pokemons/{{pokemon.name}}.jpg"
+            class="img-pokemon mx-auto d-block"></div>
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">{{pokemon.name}}</span>
+          </md-card-title-text>
+        </md-card-title>
+      </md-card>
+    </div>
+  </div>
+    <div ng-if="status == true"> 
+        <div id="open-modal" class="modal-window">
+            <div>
+              <a title="Close" class="modal-close" ng-click="ctrl.closePokedex()">Close</a>
+              <div id="pokedex">
+                  <div id="left">
+                    <div id="logo"></div>
+                    <div id="bg_curve1_left"></div>
+                    <div id="bg_curve2_left"></div>
+                    <div id="curve1_left">
+                      <div id="buttonGlass">
+                        <div id="reflect"> </div>
+                      </div>
+                      <div id="miniButtonGlass1"></div>
+                      <div id="miniButtonGlass2"></div>
+                      <div id="miniButtonGlass3"></div>
+                    </div>
+                    <div id="curve2_left">
+                      <div id="junction">
+                        <div id="junction1"></div>
+                        <div id="junction2"></div>
+                      </div>
+                    </div>
+                    <div id="screen">
+                      <div id="topPicture">
+                        <div id="buttontopPicture1"></div>
+                        <div id="buttontopPicture2"></div>
+                      </div>
+                      <div id="picture">
+                        <img ng-src="assets/images/pokemons/{{namePokemon}}.jpg" alt="psykokwak" height="170" />
+                      </div>
+                      <div id="buttonbottomPicture"></div>
+                      <div id="speakers">
+                        <div class="sp"></div>
+                        <div class="sp"></div>
+                        <div class="sp"></div>
+                        <div class="sp"></div>
+                      </div>
+                    </div>
+                    <div id="bigbluebutton"></div>
+                    <div id="barbutton1"></div>
+                    <div id="barbutton2"></div>
+                    <div id="cross">
+                      <div id="leftcross">
+                        <div id="leftT"></div>
+                      </div>
+                      <div id="topcross">
+                        <div id="upT"></div>
+                      </div>
+                      <div id="rightcross">
+                        <div id="rightT"></div>
+                      </div>
+                      <div id="midcross">
+                        <div id="midCircle"></div>
+                      </div>
+                      <div id="botcross">
+                        <div id="downT"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="right">
+                    <div id="stats">
+                      <strong>Name:</strong> {{namePokemon}}<br/>
+                      <div class="pokemonSizeFather">
+                        <span class="pokemonSizeSon"><strong>Height</strong><span>{{heightPokemon}} ft</span></span>
+                        <span class="pokemonSizeSon"><strong>Weight</strong><span>{{weightPokemon}} lb</span></span>
+                      </div>
+                      <strong>Type
+                        <md-chips input-aria-label="Favorite Sports" input-aria-describedby="staticChipsNote">
+                            <md-chip ng-repeat="typePokemon in types" class="typePokemonChip">{{typePokemon.type.name}}</md-chip>
+                          </md-chips><br/>
+                      <strong>abilities
+                        <md-chips input-aria-label="Favorite Sports" input-aria-describedby="staticChipsNote">
+                            <md-chip ng-repeat="abilitiesPokemon in abilities" class="typePokemonChip">{{abilitiesPokemon.ability.name}}</md-chip>
+                          </md-chips>
+                      
+                    </div>
+                    <div id="miniButtonGlass4"></div>
+                    <div id="miniButtonGlass5"></div>
+                    <div id="barbutton3"></div>
+                    <div id="barbutton4"></div>
+                    <div id="yellowBox1"></div>
+                    <div id="yellowBox2"></div>
+                    <div id="bg_curve1_right"></div>
+                    <div id="bg_curve2_right"></div>
+                    <div id="curve1_right"></div>
+                    <div id="curve2_right"></div>
+                  </div>
+                </div>
+              </div>
+          </div>
+    </div>
+</div>
